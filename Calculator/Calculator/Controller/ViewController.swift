@@ -30,6 +30,12 @@ class ViewController: UIViewController {
 
     @IBAction func calcBtnPressed(_ sender: UIButton) {
         isFinishedTypingNumber = true
+        calculatorLogic.setNumber(displayValue)
+        if let calcMethod = sender.currentTitle {
+            if let result = calculatorLogic.calculate(symbol: calcMethod) {
+                displayValue = result
+            }
+        }
         
     }
     
